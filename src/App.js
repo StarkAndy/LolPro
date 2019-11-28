@@ -6,19 +6,35 @@
  * @flow
  */
 
-import React from 'react';
+import React ,{ Component } from 'react';
 import {
   View,
   Text,
+  TextInput
 } from 'react-native';
+import { Input } from './components/common'
+import LoginContainer from './screens/auth/LoginContainer'
 
-const App: () => React$Node = () => {
-  return (
-      <View>
-          <Text>Hello World !</Text>
-      </View>
-    
-  );
+class App extends Component {
+
+renderTextInput(){
+
+    return(
+        <View>
+           <Input />
+        </View>
+    );
+}    
+
+ render(){
+    return (
+        <View>
+             <LoginContainer />     
+        </View>
+      
+    );
+ }   
+ 
 };
 
 
