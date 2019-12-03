@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 import { Input } from './components/common'
 import LoginContainer from './screens/auth/LoginContainer'
+import AppNavigator from './routes/AppNavigator'
 
 class App extends Component {
 
@@ -28,8 +29,8 @@ renderTextInput(){
 
  render(){
     return (
-        <View>
-             <LoginContainer />     
+        <View style={{flex:1}}>
+           <AppNavigator />
         </View>
       
     );

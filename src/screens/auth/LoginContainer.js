@@ -5,6 +5,11 @@ import  { BLUE_COLOUR} from '../../theme/colors';
 
 class LoginContainer extends Component {
 
+    static navigationOptions = {
+        //To hide the ActionBar/NavigationBar
+        header: null,
+    };
+
     renderLoginPage()
     {
         return(
