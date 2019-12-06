@@ -4,11 +4,39 @@ import  {Input , Button } from '../../components/common';
 import  { BLUE_COLOUR} from '../../theme/colors';
 
 class LoginContainer extends Component {
-
+    //To hide the ActionBar/NavigationBar
     static navigationOptions = {
-        //To hide the ActionBar/NavigationBar
         header: null,
     };
+
+    state={
+        username:'',
+        password:''
+    }
+
+    constructor(props){
+        super(props) 
+     
+    }
+
+    updateUserName=(name)=>{
+       this.setState({username:name}) 
+    }
+
+    updatePassword=(password)=>{
+        this.setState({password:password})
+    }
+
+    loginUser=()=>{
+
+        if(this.state.username === "Gyanesh" &&
+           this.state.password === "1234"){
+
+            alert("success");
+        }else{
+            alert("wrong information")
+        }
+    }
 
     renderLoginPage()
     {
@@ -17,15 +45,22 @@ class LoginContainer extends Component {
                <Input
                 label="Username" 
                 placeholder="Joe Coiner"
+                value={this.state.username}
+                onChangeText={this.updateUserName}
                />
 
                <Input
                 label="Password"
                  placeholder="Password"
-                />
+                 value={this.state.password}
+                 onChangeText={this.updatePassword}
 
+                />
+                
                 <Button 
                 label="Login"
+                onPress={()=>this.loginUser()}
+                
                 />
 
                 <Text

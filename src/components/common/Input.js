@@ -3,7 +3,7 @@ import { View ,Text ,TextInput ,StyleSheet } from 'react-native';
 
 
 const Input = (props) =>{
-    const { label ,placeholder,value} = props;
+    const { label ,placeholder,value,onChangeText} = props;
 
     return(
         <View
@@ -13,6 +13,8 @@ const Input = (props) =>{
            <TextInput 
             style={styles.inputBoxStyle}
             placeholder={placeholder}
+            value={value}
+            onChangeText={onChangeText}
            />
         </View>
     );

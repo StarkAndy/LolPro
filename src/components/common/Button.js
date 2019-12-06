@@ -7,11 +7,13 @@ import { View ,
 
 const Button = (props) =>
 {
-const{label} =props;
+const{label,onPress} =props;
 
 return(
     <View style={styles.buttonContainerStyle}>
-      <TouchableOpacity style={styles.buttonStyle}>
+      <TouchableOpacity style={styles.buttonStyle}
+      onPress={onPress}
+      >
         <Text style={styles.labelStyle}>{label}</Text>   
        </TouchableOpacity>  
     </View>
