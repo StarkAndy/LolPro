@@ -4,19 +4,30 @@ import { createAppContainer } from 'react-navigation'
 import HomePage from '../screens/app/HomePage'
 import AuthLoading from '../screens/auth/AuthLoading'
 import LoginContainer from '../screens/auth/LoginContainer'
+import AuthStack from './AuthStack';
 
 const RootStack = createStackNavigator(
     {
-     AuthLoadingScreen:
-         AuthLoading,
-     Auth:LoginContainer,
-     App:HomePage
+        AuthLoadingScreen:
+            AuthLoading,
+        Auth: {
+            screen: AuthStack,
+            navigationOptions: {
+                header: null
+            }
+        },
+        App: { 
+            screen:HomePage,
+            navigationOptions: {
+                header: null
+            }
+        }
     },
     {
-        initialRouteName:'AuthLoadingScreen'
+        initialRouteName: 'Auth'
     }
 
 );
 
-const AppNavigator =createAppContainer(RootStack)
+const AppNavigator = createAppContainer(RootStack)
 export default AppNavigator;

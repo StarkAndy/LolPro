@@ -1,14 +1,16 @@
 import React ,{ Component} from 'react';
-import {View ,Text ,StyleSheet} from 'react-native';
+import {View ,Text ,StyleSheet ,TouchableOpacity} from 'react-native';
 import  {Input , Button } from '../../components/common';
 import  { BLUE_COLOUR} from '../../theme/colors';
 
 class LoginContainer extends Component {
     //To hide the ActionBar/NavigationBar
+
     static navigationOptions = {
+        //To hide the ActionBar/NavigationBar
         header: null,
     };
-
+    
     state={
         username:'',
         password:''
@@ -29,10 +31,9 @@ class LoginContainer extends Component {
 
     loginUser=()=>{
 
-        if(this.state.username === "Gyanesh" &&
-           this.state.password === "1234"){
-
-            alert("success");
+        if(this.state.username === "G" &&
+           this.state.password === "1"){
+           this.props.navigation.navigate('App');
         }else{
             alert("wrong information")
         }
@@ -41,7 +42,7 @@ class LoginContainer extends Component {
     renderLoginPage()
     {
         return(
-            <View>
+            <View style={styles.containerStyle}>
                <Input
                 label="Username" 
                 placeholder="Joe Coiner"
@@ -63,11 +64,16 @@ class LoginContainer extends Component {
                 
                 />
 
-                <Text
-                 style={{}}
-                >New User ?
+               <View style={{flexDirection:'row' ,alignContent:'center',marginTop:10,justifyContent:'center'}}>
+                <Text>New User ? </Text>
+                <TouchableOpacity
+                onPress={()=>this.props.navigation.navigate('Signup')}
+                >
                 <Text style={{color:BLUE_COLOUR}}>Signup</Text>
-                </Text>
+                </TouchableOpacity>
+              </View>
+               
+
             </View>
         );
     }
@@ -87,6 +93,9 @@ class LoginContainer extends Component {
 
 const styles= StyleSheet.create(
     {
+        containerStyle:{
+            marginTop:20
+        }
         
     }
 );
