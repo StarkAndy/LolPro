@@ -3,11 +3,11 @@ import { View ,Text ,TextInput ,StyleSheet } from 'react-native';
 
 
 const Input = (props) =>{
-    const { label ,placeholder,value,onChangeText} = props;
+    const { label ,placeholder,value,onChangeText,inputStyle} = props;
 
     return(
         <View
-        style={styles.inputContainerStyle}
+         style={[styles.inputContainerStyle,inputStyle]}
         >
            <Text>{label}</Text>
            <TextInput 
@@ -28,11 +28,14 @@ const styles=StyleSheet.create(
             borderColor: 'gray', 
             borderWidth: 1,
             borderRadius:5,  
-            elevation:1
+            elevation:1,
+            marginTop:5
+         
         },
         inputContainerStyle:
         {
-         marginHorizontal:10
+         marginHorizontal:10,
+         marginTop:20
         }
 
     }

@@ -24,7 +24,8 @@ return(
 const styles= StyleSheet.create({
     buttonContainerStyle:
     {
-      alignItems:'center'
+      alignItems:'center',
+      marginTop:10
     },
     buttonStyle:{
         backgroundColor:'blue',
